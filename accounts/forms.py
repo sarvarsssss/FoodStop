@@ -4,19 +4,19 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
 class RegisterForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter your username'}),
+    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Foydalanuvchi ismini kiriting'}),
                                help_text="<small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>")
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control','placeholder':'Enter your Email Address'}))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your First Name'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control','placeholder':'Email manzilingizni kiriting'}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ismingizni kiriting'}))
     last_name = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': 'Enter your Last Name'}))
+        attrs={'class': 'form-control', 'placeholder': 'Familiyangizni kiriting'}))
     password1 = forms.CharField(label="Password",widget=forms.PasswordInput(attrs={'class':'form-control'}),
-                                    help_text="<small><ul><li>Your password can't be too similar to your other personal information.</li>\
-                                    <li>Your password must contain at least 8 characters.</li>\
+                                    help_text="<small><ul><li>Siznining parolingiz boshqa malumotlar bilan bircil bo'lmasligi kerak.</li>\
+                                    <li>Sizning parolingiz 8 ta belgidan ko'p bo'lsin</li>\
                                     <li>Your password can't be a commonly used password.</li>\
                                     <li>Your password can't be entirely numeric.</li></ul></small>")
     password2 = forms.CharField(label="Password confirmation", widget=forms.PasswordInput(attrs={'class': 'form-control'}),\
-                                help_text="<small>Enter the same password as before, for verification.</small>")
+                                help_text="<small>Parolni tasdiqlash uchun qaytadan kiriting</small>")
     class Meta:
         model = User
         fields=['username','email','first_name','last_name','password1', 'password2',]

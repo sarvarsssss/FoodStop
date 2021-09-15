@@ -21,24 +21,20 @@
             </h3>
             <p class="card-text">
               <div class="row">
-                <div class="col-md-6">
-                  <b>Price:</b> {{ obj.price|intcomma }} So'm
+                <div class="col-md-12">
+                  <b>Narxi:</b> {{ obj.price|intcomma }} $
+
                 </div>
-                <div class="col-md-6">
-                  <b>Likes:</b> {{ obj.likes_count }}
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <b>Mazasi:</b>10 dan {{ obj.taste }}
-                </div>
-                <div class="col-md-6">
-                  <b>Odam:</b> {{ obj.persons }}
-                </div>
+              <div class="col-md-12"> <b>Joylashuvi:</b> {{ obj.location }}</div>
+              <div class="col-md-12"> <b>Uzatish qutisi:</b> {{ obj.persons }}</div>
+
+{#                <div class="col-md-6">#}
+{#                  <b>Likes:</b> {{ obj.likes_count }}#}
+{#                </div>#}
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <b>Turkumi: </b>
+                  <b>Campaniya: </b>
                   {% for cat in obj.get_categories %}
                   <a href="?q={{ request.GET.q }}&cat={{ cat }}">{{ cat }}</a>
                   {% endfor %}

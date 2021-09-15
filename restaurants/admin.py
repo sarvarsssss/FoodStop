@@ -2,13 +2,13 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Restaurant, Comment
+from .models import CarSell, Comment
 
 
-@admin.register(Restaurant)
+@admin.register(CarSell)
 class RestaurantAdmin(admin.ModelAdmin):
     list_display = ['title', 'categories', 'user',
-                    'location', 'price', 'taste', 'persons', ]
+                    'location', 'price','tel','year', 'taste', 'persons' ]
     search_fields = ['title']
     list_filter = ['user', 'created_at']
     list_per_page = 20
